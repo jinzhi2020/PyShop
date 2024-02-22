@@ -81,7 +81,6 @@ def logout():
 @jwt_required()
 def change_password():
     data = request.get_json()
-    username = data.get('username')
     old_password = data.get('old_password')
     new_password = data.get('new_password')
 
