@@ -77,6 +77,7 @@ def logout():
 
     return jsonify({"message": "Logged out successfully"}), 200
 
+
 @app.route('/change_password', methods=['POST'])
 @jwt_required()
 def change_password():
