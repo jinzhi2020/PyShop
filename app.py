@@ -34,12 +34,12 @@ def register():
     password = data.get('password')
 
     if not username or not password:
-        return jsonify({"message": "username or password required"}), 400
+        return jsonify({"message": "username or password required"}), 401
 
     user = User.query.filter_by(username=username).first()
 
     if user is not None:
-        return jsonify({"message": "username already taken"}), 400
+        return jsonify({"message": "username already taken"}), 402
 
     new_user = User(username=username, password=generate_password_hash(password))
 
